@@ -26,9 +26,18 @@ const SITE_CONFIG = {
       `Hola, Addara Spa. Quisiera consultar la disponibilidad para ${detalle}. ¿Podrían brindarme más información?`
   },
 
-  /* Horarios sin confirmar: dejar `null` muestra el texto
-     de consulta en lugar de una tabla inventada. */
-  horarios: null, // ej. [{ dias: "Lunes a viernes", horas: "9:00 – 19:00" }]
+  /* Horarios publicados en el WhatsApp Business del local.
+     El jueves figura como 10:53, posible error de tipeo a
+     confirmar con el establecimiento. Domingo sin horario
+     publicado: no se incluye para no inventar datos. */
+  horarios: [
+    { dias: "Lunes", horas: "11:00 – 21:00" },
+    { dias: "Martes", horas: "11:00 – 21:00" },
+    { dias: "Miércoles", horas: "11:00 – 21:00" },
+    { dias: "Jueves", horas: "11:00 – 21:00" },
+    { dias: "Viernes", horas: "11:00 – 22:00" },
+    { dias: "Sábado", horas: "11:00 – 21:00" }
+  ],
 
   notaDemo:
     "Propuesta visual de demostración. Las imágenes son ilustrativas y los valores están pendientes de confirmación."
@@ -101,7 +110,7 @@ const SERVICES = [
     nombre: "Pedicura",
     descripcion: "Descanso y cuidado para tus pies.",
     imagen: "assets/img/pedicura.webp",
-    alt: "Cuidado de pies en ambiente de spa, imagen conceptual",
+    alt: "Profesional realizando pedicura en un salón, imagen conceptual",
     precioGs: null,
     precioConfirmado: false,
     notaPrecio: null,
@@ -112,7 +121,7 @@ const SERVICES = [
     nombre: "Masaje capilar",
     descripcion: "Relax concentrado en cuello, cabeza y cuero cabelludo.",
     imagen: "assets/img/masaje-capilar.webp",
-    alt: "Lavado y masaje capilar en peluquería, imagen conceptual",
+    alt: "Lavado con masaje capilar en bachas, imagen conceptual",
     precioGs: null,
     precioConfirmado: false,
     notaPrecio: null,
@@ -123,7 +132,7 @@ const SERVICES = [
     nombre: "Otros masajes",
     descripcion: "Otras variedades de masaje a confirmar con el establecimiento.",
     imagen: "assets/img/otros-masajes.webp",
-    alt: "Ambiente de sala de masajes con luz tenue, imagen conceptual",
+    alt: "Masaje de cabeza y rostro en camilla, imagen conceptual",
     precioGs: null,
     precioConfirmado: false,
     notaPrecio: "Variedad a confirmar",
@@ -147,7 +156,7 @@ const COMBOS = [
     destacado: true,
     vigencia: null,
     imagen: "assets/img/ritual-toallas-aceites.webp",
-    alt: "Toallas, aceites y velas preparados para un ritual, imagen conceptual"
+    alt: "Masaje con piedras calientes sobre la espalda, imagen conceptual"
   },
   {
     id: "combo-sauna-capilar",
@@ -175,8 +184,8 @@ const COMBOS = [
     activo: true,
     destacado: false,
     vigencia: null,
-    imagen: "assets/img/masaje-relajante.webp",
-    alt: "Sesión de masaje en sala tranquila, imagen conceptual"
+    imagen: "assets/img/masaje-espalda.webp",
+    alt: "Manos masajeando la espalda, imagen conceptual"
   },
   {
     id: "combo-sauna-exfoliacion",
@@ -206,8 +215,8 @@ const GALLERY = [
     clase: "alta"
   },
   {
-    src: "assets/img/jardin-tropical.webp",
-    alt: "Jardín tropical con pileta y reposeras, imagen conceptual",
+    src: "assets/img/agua-jardin.webp",
+    alt: "Espejo de agua entre palmeras y tinajas de barro, imagen conceptual",
     titulo: "Verde alrededor",
     clase: ""
   },
@@ -218,8 +227,8 @@ const GALLERY = [
     clase: ""
   },
   {
-    src: "assets/img/ritual-toallas-aceites.webp",
-    alt: "Toallas blancas, aceites y velas, imagen conceptual",
+    src: "assets/img/detalles-spa.webp",
+    alt: "Toalla, crema, vela encendida y flores sobre una mesa, imagen conceptual",
     titulo: "Detalles que abrigan",
     clase: "ancha"
   }
